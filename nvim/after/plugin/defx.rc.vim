@@ -5,13 +5,16 @@ if !exists('g:loaded_defx') | finish | endif
 "      \ -columns=indent:mark:icon:icons:filename:git:size
 "      \ -buffer-name=tab`tabpagenr()`<CR>
 nnoremap <silent>sf :<C-u>Defx -listed -resume
-      \ -columns=indent:mark:icon:icons:filename:git:size
+      \ -columns=indent:mark:icon:icons:file_icon:filename:git:size
+      \ -show-ignored-files
+      \ -winwidth=50
       \ -buffer-name=tab`tabpagenr()`
       \ `expand('%:p:h')` -search=`expand('%:p')`<CR>
 nnoremap <silent>fi :<C-u>Defx -new `expand('%:p:h')` -search=`expand('%:p')`<CR>
 
 autocmd FileType defx call s:defx_my_settings()
 	function! s:defx_my_settings() abort
+    let g:defx_icons_column_length = 5
 	  " Define mappings
 	  nnoremap <silent><buffer><expr> <CR>
 	  \ defx#do_action('open')
@@ -79,6 +82,7 @@ autocmd FileType defx call s:defx_my_settings()
 call defx#custom#column('icon', {
       \ 'directory_icon': '▸',
       \ 'opened_icon': '▾',
+      \ 'file_icon': ' ',
       \ 'root_icon': ' ',
       \ })
 call defx#custom#column('git', 'indicators', {

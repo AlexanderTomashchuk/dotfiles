@@ -35,3 +35,5 @@ Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
 
 call plug#end()
 
+" Extension for defx.nvim - additional space between icon and filename
+let g:defx_icons_column_length = 2
