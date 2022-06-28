@@ -9,5 +9,6 @@ cp -rp ~/.config/tmux/ ./tmux
  
 # Copying files
 cp ~/.ideavimrc .ideavimrc
+cp ~/.config/vimium-options.json vimium-options.json
 cp ~/.npmrc .npmrc
 
