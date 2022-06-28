@@ -90,5 +90,9 @@ lerna-debug.log
 .DS_Store
 Thumbs.db
 
-# Fish variables
+# Fish Files 
 fish_variables
+/fish/functions/*
+!/fish/functions/peco_select_history.fish
+!/fish/functions/peco_change_directory.fish
+!/fish/functions/fish_user_key_bindings.fish
