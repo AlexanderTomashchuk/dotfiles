@@ -9,14 +9,21 @@ scriptencoding utf-8
 if !1 | finish | endif
 
 set nocompatible
-set number
+set number relativenumber
 syntax enable
 set fileencodings=utf-8,sjis,euc-jp,latin
 set encoding=utf-8
 set title
+set ruler
+set et
 set autoindent
 set background=dark
+set autoread
+set autowrite
 set nobackup
+set nowritebackup
+set noswapfile
+set incsearch
 set hlsearch
 set showcmd
 set cmdheight=1
@@ -26,6 +33,10 @@ set expandtab
 "let loaded_matchparen = 1
 set shell=fish
 set backupskip=/tmp/*,/private/tmp/*
+
+" Setup leader key
+let mapleader=" "
+nnoremap <SPACE> <Nop>
 
 " incremental substitution (neovim)
 if has('nvim')
@@ -38,11 +49,13 @@ set t_BE=
 set nosc noru nosm
 " Don't redraw while executing macros (good performance config)
 set lazyredraw
-"set showmatch
+set showmatch
 " How many tenths of a second to blink when matching brackets
 "set mat=2
 " Ignore case when searching
 set ignorecase
+" Be smart when searching
+set smartcase
 " Be smart when using tabs ;)
 set smarttab
 " indents

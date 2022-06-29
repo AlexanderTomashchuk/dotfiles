@@ -28,6 +28,9 @@ if has("nvim")
   Plug 'nvim-telescope/telescope.nvim'
   Plug 'windwp/nvim-autopairs'
   Plug 'windwp/nvim-ts-autotag'
+  Plug 'preservim/NERDTree'
+  Plug 'easymotion/vim-easymotion'
+  Plug 'mg979/vim-visual-multi'
 endif
 
 Plug 'groenewege/vim-less', { 'for': 'less' }

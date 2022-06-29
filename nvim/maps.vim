@@ -2,8 +2,12 @@
 
 nnoremap <S-C-p> "0p
 " Delete without yank
-nnoremap <leader>d "_d
-nnoremap x "_x
+"nnoremap <leader>d "_d
+"nnoremap x "_x
+nnoremap d "_d
+nnoremap D "_D
+nnoremap c "_c
+nnoremap C "_C
 
 " Increment/decrement
 nnoremap + <C-a>
@@ -44,6 +48,8 @@ nmap <Tab> :tabnext<Return>
 " Split window
 nmap ss :split<Return><C-w>w
 nmap sv :vsplit<Return><C-w>w
+" Close window
+nmap sx <C-w>c
 " Move window
 nmap <Space> <C-w>w
 map s<left> <C-w>h
@@ -60,3 +66,21 @@ nmap <C-w><right> <C-w>>
 nmap <C-w><up> <C-w>+
 nmap <C-w><down> <C-w>-
 
+" Is it junk? TODO: Remove if not needed
+"------------------------------
+" System clipboard
+"set clipboard=unnamed
+
+"vmap <leader>y "+y
+"vmap <leader>d "+d
+"nmap <leader>y "+yy
+"nmap <leader>p "+p
+"nmap <leader>P "+P
+"vmap <leader>p "+p
+"vmap <leader>P "+P
+
+" Is it junk? TODO: Remove if not needed
+"nnoremap <C-j> :m +1<CR>
+"nnoremap <C-k> :m -2<CR>
+"inoremap <C-j> <Esc>:m +1<CR>gi
+"inoremap <C-k> <Esc>:m -2<CR>gi
