@@ -9,5 +9,5 @@ git commit -m "$FIRST_ARGUMENT";
 
 echo "Publishing changes to GitHub..."
 git push;
-echo "Finished"
+echo "Done"
 
