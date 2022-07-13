@@ -51,7 +51,6 @@ nmap sv :vsplit<Return><C-w>w
 " Close window
 nmap sx <C-w>c
 " Move window
-nmap <Space> <C-w>w
 map s<left> <C-w>h
 map s<up> <C-w>k
 map s<down> <C-w>j
@@ -65,6 +64,15 @@ nmap <C-w><left> <C-w><
 nmap <C-w><right> <C-w>>
 nmap <C-w><up> <C-w>+
 nmap <C-w><down> <C-w>-
+
+"------------------------------
+" Text editing
+
+" Multiple cursors
+let g:VM_maps = {}
+let g:VM_maps['Find Under']         = 'mc'
+let g:VM_maps["Select Cursor Down"] = 'mj'
+let g:VM_maps["Select Cursor Up"]   = 'mk'
 
 " Is it junk? TODO: Remove if not needed
 "------------------------------

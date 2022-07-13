@@ -2,82 +2,66 @@ source ~/.config/nvim/init.vim
 source ~/.config/nvim/plug.vim
 source ~/.config/nvim/maps.vim
 
+set clipboard+=unnamed
 set idearefactormode=keep
 set ideajoin
 set surround
 set easymotion
 
-" Extension for EasyMotion 
-" For EasyMotion to work properly, the mappings of IdeaVim-EasyMotion should be executed instead of AceJump mappings
+"------------------------------
+" Extensions for EasyMotion 
 let g:EasyMotion_override_acejump = 0
+let g:EasyMotion_do_mapping= 0
 
 "------------------------------
 " EasyMotion Actions
 
-"Find(Search) {char} forward and backward.
+" Find(Search) {char} forward and backward.
 map <leader>f <Plug>(easymotion-s) 
-"Find {char} to the right. See |f|.
-map <leader><leader>f{char} <Plug>(easymotion-f)
-"Find {char} to the left. See |F|.
-map <leader><leader>F{char} <Plug>(easymotion-F)
-"Beginning of word forward. See |w|.
-map <leader><leader>w <Plug>(easymotion-w)
-"Beginning of WORD forward. See |W|.
-map <leader><leader>W <Plug>(easymotion-W)
-"Beginning of word backward. See |b|.
-map <leader><leader>b <Plug>(easymotion-b)
-"Beginning of WORD backward. See |B|.
-map <leader><leader>B <Plug>(easymotion-B)
-"End of word forward. See |e|.
-map <leader><leader>e <Plug>(easymotion-e)
-"End of WORD forward. See |E|.
-map <leader><leader>E <Plug>(easymotion-E)
-"End of word backward. See |ge|.
-map <leader><leader>ge <Plug>(easymotion-ge)
-" End of WORD backward. See |gE|.
-map <leader><leader>gE <Plug>(easymotion-gE)
-"Line downward. See |j|.
-map <leader><leader>j <Plug>(easymotion-j)
-"Line upward. See |k|.
-map <leader><leader>k <Plug>(easymotion-k)
-"Jump to latest "/" or "?" forward. See |n|.
-map <leader><leader>n <Plug>(easymotion-n)
-"Jump to latest "/" or "?" backward. See |N|.
-map <leader><leader>N <Plug>(easymotion-N)
-"Till before the {char} to the right. See |t|.
-"map <leader><leader>t <Plug>(easymotion-t)
-"Till after the {char} to the left. See |T|.
-"map <leader><leader>T <Plug>(easymotion-T)
 
 "------------------------------
 " Rider Actions
 
+" Navigation
+map <leader>n <Action>(SearchEverywhere)
 nmap gd <Action>(GotoDeclaration)
 nmap gi <Action>(ReSharperGotoImplementation)
-map <leader>n <Action>(SearchEverywhere)
-map <leader>t <Action>(ActivateTerminalToolWindow)
-map <leader>cn <Action>(RenameElement)
+
+" Code editing
+nmap <leader>cn <Action>(RenameElement)
 nmap <leader>ge <Action>(Generate)
-map <leader>d <Action>(Debug)
-nmap <leader>h <Action>(PreviousTab)
-nmap <leader>l <Action>(NextTab)
+
+" Utilities
 nmap <leader>/ <Action>(ShowErrorDescription)
 map <leader>o <Action>(FileStructurePopup)
 map <leader>rc <Action>(ReformatCode)
 map <leader>a <Action>(ShowIntentionActions)
-nnoremap <leader><leader> <C-Tab>
-nmap <leader>x <action>(CloseEditor)
 map <leader>ex <Action>(ActivateProjectToolWindow)
-map <leader><leader>t <Action>(MoveEditorToOppositeTabGroup)
+map <leader>d <Action>(Debug)
+
+" Tabs 
+nmap <tab> <Action>(NextTab)
+nmap <s-tab> <Action>(PreviousTab)
+nmap <leader>x <Action>(CloseEditor)
+nmap sw <Action>(EditSourceInNewWindow)
+
+" Terminal
+map <leader>t <Action>(Terminal.OpenInTerminal)
+nmap <c-t> <Action>(ActivateTerminalToolWindow)
+" Hide active tool window (terminal) - Ctrl+C
+
+" Toggle distraction free mode
+nmap <c-z> <Action>(ToggleDistractionFreeMode)
+
+nnoremap <leader><leader> <C-Tab>
+"map <leader><leader>t <Action>(MoveEditorToOppositeTabGroup)
 "map <leader>n <Action>(GotoSymbol)
 "nmap <leader>m <action>(Git.Menu)
 "map <leader>h <Action>(Vcs.ShowTabbedFileHistory)
 "map <S-Space> <Action>(GotoNextError)
 
-" Is it junk? TODO: Remove if not needed
+"TODO: Install and setup NERDTree
+"https://www.youtube.com/watch?v=dwxi60ZGeTM
 "set NERDTree
 "let g:NERDTreeMapActivateNode='l'
 "let g:NERDTreeMapJumpParent='h'
-"noremap <Esc> <Nop>
-"nmap <S-Enter> O<Esc>
-"nmap <CR> o<Esc>
