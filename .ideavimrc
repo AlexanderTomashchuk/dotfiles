@@ -23,7 +23,8 @@ map <leader>f <Plug>(easymotion-s)
 " Rider Actions
 
 " Navigation
-map <leader>n <Action>(SearchEverywhere)
+"map <leader>n <Action>(SearchEverywhere)
+map sf <Action>(SearchEverywhere)
 nmap gd <Action>(GotoDeclaration)
 nmap gi <Action>(ReSharperGotoImplementation)
 
@@ -39,10 +40,10 @@ map <leader>a <Action>(ShowIntentionActions)
 map <leader>ex <Action>(ActivateProjectToolWindow)
 map <leader>d <Action>(Debug)
 
-" Tabs 
+" Tabs
 nmap <tab> <Action>(NextTab)
 nmap <s-tab> <Action>(PreviousTab)
-nmap <leader>x <Action>(CloseEditor)
+nmap <c-x> <Action>(CloseEditor)
 nmap sw <Action>(EditSourceInNewWindow)
 
 " Terminal
